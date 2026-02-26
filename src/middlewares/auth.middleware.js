@@ -17,6 +17,8 @@ async function authArtist(req,res,next) {
                 message:"Not Allowed!"
             })
         }
+
+        req.user = decoded
         
         next()
 
