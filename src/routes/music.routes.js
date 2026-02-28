@@ -9,6 +9,8 @@ const upload = multer({
 })
 
 router.post('/upload',authMiddleware.authArtist,upload.single('music'),musicController.createMusic)
-router.post("/album",musicController.creaeteAlbum)
-
+router.post("/album",authMiddleware.authArtist,musicController.creaeteAlbum)
+router.get("/",authMiddleware.authUser,musicController.fetchMusic)
+router.get("/album",authMiddleware.authUser,musicController.getAllAlbums)
+router.get("/albums/:albumId",authMiddleware.authUser,musicController.getAlbumById)
 module.exports=router
