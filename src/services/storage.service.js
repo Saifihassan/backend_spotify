@@ -10,7 +10,7 @@ async function uploadFile(file){
     const res = await client.files.upload({
         file,
         fileName:'music_'+Date.now(),
-        folder:'Backend_DEV/spotify_clone/music'
+        folder:'Backend_DEV/spotify_clone/music' 
     })
 
     return res
